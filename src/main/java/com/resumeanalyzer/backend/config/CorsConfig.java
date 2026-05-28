@@ -19,7 +19,7 @@ public class CorsConfig {
 
         configuration.setAllowedOrigins(
                 List.of(
-                    "https://ai-resume-analyzer-frontend-pro.vercel.app"
+                    "https://ai-resume-analyzer-kappa-rust-43.vercel.app"
                 )
         );
 
