@@ -18,7 +18,10 @@ public class CorsConfig {
                 new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of("https://ai-resume-analyzer-frontend-pro.vercel.app")
+                List.of("https://ai-resume-analyzer-frontend-pro.vercel.app",
+                       "http://localhost:5173"
+                       )
+                
         );
 
         configuration.setAllowedMethods(
