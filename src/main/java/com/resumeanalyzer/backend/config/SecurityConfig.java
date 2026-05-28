@@ -33,7 +33,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(
             HttpSecurity http
     ) throws Exception {
-
+          // avoid to attack
         http
             .cors(cors -> {})
             .csrf(csrf -> csrf.disable())
