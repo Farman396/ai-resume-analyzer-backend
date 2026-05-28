@@ -9,6 +9,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.List;
 
 @Configuration
+@CrossOrigin(origins = "https://ai-resume-analyzer-frontend-pro.vercel.app/")    
 public class CorsConfig {
 
     @Bean
