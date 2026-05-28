@@ -23,21 +23,21 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-  @Bean
-public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+ @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-    http
-        .csrf(csrf -> csrf.disable())
-        .cors(cors -> {})
-        .authorizeHttpRequests(auth -> auth
-                .requestMatchers(
-                        "/auth/**"
-                ).permitAll()
-                .anyRequest().authenticated()
-        );
+        http
+                .csrf(csrf -> csrf.disable())
 
-    return http.build();
-}
+                .cors(Customizer.withDefaults())
+
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/auth/**").permitAll()
+                        .anyRequest().authenticated()
+                );
+
+        return http.build();
+    }
 
     @Bean
     public AuthenticationManager authenticationManager(
