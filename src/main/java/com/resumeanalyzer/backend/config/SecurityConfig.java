@@ -23,22 +23,17 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-public SecurityFilterChain securityFilterChain(HttpSecurity http)
-        throws Exception {
+  @Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
     http
-        .cors(cors -> {})
         .csrf(csrf -> csrf.disable())
-
+        .cors(cors -> {})
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers(
-                "/auth/**",
-                "/resume/**",
-                "/ai/**"
-            ).permitAll()
-
-            .anyRequest().authenticated()
+                .requestMatchers(
+                        "/auth/**"
+                ).permitAll()
+                .anyRequest().authenticated()
         );
 
     return http.build();
