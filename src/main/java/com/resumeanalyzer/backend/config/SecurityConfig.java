@@ -24,29 +24,25 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http)
-            throws Exception {
+public SecurityFilterChain securityFilterChain(HttpSecurity http)
+        throws Exception {
 
-        http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/api/auth/**"
-                        ).permitAll()
-                        .anyRequest().authenticated()
-                )
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(
-                                SessionCreationPolicy.STATELESS
-                        )
-                )
-                .addFilterBefore(
-                        jwtAuthFilter,
-                        UsernamePasswordAuthenticationFilter.class
-                );
+    http
+        .cors(cors -> {})
+        .csrf(csrf -> csrf.disable())
 
-        return http.build();
-    }
+        .authorizeHttpRequests(auth -> auth
+            .requestMatchers(
+                "/auth/**",
+                "/resume/**",
+                "/ai/**"
+            ).permitAll()
+
+            .anyRequest().authenticated()
+        );
+
+    return http.build();
+}
 
     @Bean
     public AuthenticationManager authenticationManager(
