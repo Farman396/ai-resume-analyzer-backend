@@ -2,10 +2,7 @@ package com.resumeanalyzer.backend.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.security.config.Customizer;
+import org.springframework.web.cors.*;
 
 import java.util.List;
 
@@ -19,19 +16,11 @@ public class CorsConfig {
                 new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of(
-                    "https://ai-resume-analyzer-kappa-rust-43.vercel.app"
-                )
+                List.of("https://ai-resume-analyzer-kappa-rust-43.vercel.app")
         );
 
         configuration.setAllowedMethods(
-                List.of(
-                    "GET",
-                    "POST",
-                    "PUT",
-                    "DELETE",
-                    "OPTIONS"
-                )
+                List.of("*")
         );
 
         configuration.setAllowedHeaders(
