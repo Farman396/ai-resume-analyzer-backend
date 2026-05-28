@@ -8,8 +8,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.List;
 
-@Configuration
-@CrossOrigin(origins = "https://ai-resume-analyzer-frontend-pro.vercel.app/")    
+@Configuration 
 public class CorsConfig {
 
     @Bean
@@ -19,7 +18,7 @@ public class CorsConfig {
                 new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173")
+                List.of("https://ai-resume-analyzer-frontend-pro.vercel.app")
         );
 
         configuration.setAllowedMethods(
