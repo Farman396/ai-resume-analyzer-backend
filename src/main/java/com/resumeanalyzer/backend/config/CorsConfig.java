@@ -16,7 +16,7 @@ public class CorsConfig {
                 new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                List.of("https://ai-resume-analyzer-qtypngy34-farman396s-projects.vercel.app")
+                List.of("https://ai-resume-analyzer-qtypngy34-farman396s-projects.vercel.app","https://ai-resume-analyzer-kappa-rust-43.vercel.app")
         );
 
         configuration.setAllowedMethods(
