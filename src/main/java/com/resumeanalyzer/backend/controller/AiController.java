@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/ai")
+@RequestMapping("/ai")
 @RequiredArgsConstructor
 @CrossOrigin("*")
 public class AiController {
