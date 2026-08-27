@@ -14,7 +14,7 @@ public class Resume {
 
     private String fileName;
 
-    @Column(columnDefinition = "LONGTEXT")
+    @Column(columnDefinition = "TEXT")
     private String extractedText;
 
     private String uploadedBy;
