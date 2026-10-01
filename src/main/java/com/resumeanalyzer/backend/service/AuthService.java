@@ -38,15 +38,15 @@ public class AuthService {
 
         User user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() ->
-                        new RuntimeException("User not found"));
+                        new RuntimeException("Invalid email or password"));
 
-        if(passwordEncoder.matches(
+        if (!passwordEncoder.matches(
                 request.getPassword(),
                 user.getPassword())) {
 
-            return jwtService.generateToken(user.getEmail());
+            throw new RuntimeException("Invalid email or password");
         }
 
-        return "Invalid Password";
+        return jwtService.generateToken(user.getEmail());
     }
 }
